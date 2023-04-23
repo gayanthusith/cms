@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+        <!--home page css link-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--remixicon link-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+        <!--google font link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+</head>
+<body class="dash-body">
+    
+    <div class="header">
+        <div class="header-nav">
+            <a href="#" class="header-logo"><span class="new-head">Class-Room</span> Management System</a>
+    
+            <ul class="header-navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html" class="active1">Dashboard</a></li>
+            </ul>
+            <!--<div class="bx bx-menu" id="menu-icon"></div>-->
+        </div>
+    </div>
+
+
+    <section class="sidebar">
+        <!-- Select-box-->
+        <form>
+            <div class="selector">
+                <div id="selectField">
+                    <p id="selectText">Select Class-Room</p>
+                    <img src="img/arrow-down-s-fill.png">
+                </div>
+
+                <ul id="list" class="hide">
+                    <li class="options">
+                        <p>203</p>
+                    </li>
+
+                    <li class="options">
+                        <p>204</p>
+                    </li>
+
+                    <li class="options">
+                        <p>205</p>
+                    </li>
+
+                    <li class="options">
+                        <p>206</p>
+                    </li>
+
+                    <li class="options">
+                        <p>207</p>
+                    </li>
+                </ul>
+            </div>
+
+            <input type="submit" value="Search" class="btn1">
+        </form>
+    </section>
+
+    <main class="main"></main>
+
+
+    <!--custom js-->
+    <script>
+        var selectField = document.getElementById("selectField");
+        var selectText = document.getElementById("selectText");
+        var options = document.getElementsByClassName("options");
+        var list = document.getElementById("list");
+
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+        }
+
+
+            for(option of options){
+                option.onclick = function(){
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle("hide");
+                }
+            }
+    </script>
+</body>
+</html>
